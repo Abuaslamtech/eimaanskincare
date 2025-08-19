@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Star, MessageCircle, ArrowRight, Sparkles, Heart, ShoppingBag } from "lucide-react";
 import { products } from "../../constants/products";
 import { generateWhatsAppLink } from "../../utils/whatsapp";
 
 export default function Products() {
-  const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
+  const [ setHoveredProduct] = useState<number | null>(null);
   const [likedProducts, setLikedProducts] = useState(new Set());
   
 
 
 
-  const toggleLike = (productId, e) => {
+  const toggleLike = (productId: number, e: React.MouseEvent<HTMLDivElement>)  => {
     e.preventDefault();
     setLikedProducts(prev => {
       const newSet = new Set(prev);

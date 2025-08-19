@@ -1,5 +1,10 @@
+type Product = {
+  name: string;
+  price: string | number;
+};
+
 const whatsappNumber = "+2348064474739"; // Replace with actual number
-export const generateWhatsAppLink = (product) => {
+export const generateWhatsAppLink = (product:Product) => {
   const message = encodeURIComponent(
     `Hi! I'm interested in purchasing the ${product.name} for ${product.price}. Can you assist me with my order?`
   );

@@ -1,4 +1,4 @@
-import { ChevronDown, ArrowRight, Sparkles } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import shopping from "../../assets/shopping.png";
 import logo from "../../assets/logo.png";
 
