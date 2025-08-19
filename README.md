@@ -34,8 +34,8 @@ A premium, modern landing page for Eimaan Innovative Skin Care featuring stunnin
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/eimaan-skincare-landing.git
-   cd eimaan-skincare-landing
+   git clone https://github.com/abuaslamtech/eimaanskincare.git
+   cd eimaanskincare
    ```
 
 2. **Install dependencies**
@@ -53,7 +53,7 @@ A premium, modern landing page for Eimaan Innovative Skin Care featuring stunnin
    ```
 
 4. **Open your browser**
-   Navigate to `http://localhost:3000` to view the landing page.
+   Navigate to `http://localhost:5173` to view the landing page.
 
 ### Build for Production
 
