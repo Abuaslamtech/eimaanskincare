@@ -4,7 +4,7 @@ import { products } from "../../constants/products";
 import { generateWhatsAppLink } from "../../utils/whatsapp";
 
 export default function Products() {
-  const [hoveredProduct, setHoveredProduct] = useState(null);
+  const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
   const [likedProducts, setLikedProducts] = useState(new Set());
   
 

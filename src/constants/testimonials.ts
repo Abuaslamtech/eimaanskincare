@@ -1,20 +1,66 @@
-  export const testimonials = [
-    {
-      name: "Adunni Olatunji",
-      rating: 5,
-      text: "My skin has never looked better! The vitamin C serum completely transformed my complexion in just 3 weeks.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b789?w=80&h=80&fit=crop&crop=face"
-    },
-    {
-      name: "Kemi Adebayo",
-      rating: 5,
-      text: "I've tried countless products, but Eimaan's night cream is pure magic. My wrinkles are visibly reduced!",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face"
-    },
-    {
-      name: "Fatima Mohammed",
-      rating: 5,
-      text: "The customer service is amazing and the products actually work. My friends keep asking what I'm using!",
-      image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&fit=crop&crop=face"
-    }
-  ];
+  export   const testimonials = [
+      {
+        id: 1,
+        name: "Adunni Olatunji",
+        rating: 5,
+        text: "My skin has never looked better! The vitamin C serum completely transformed my complexion in just 3 weeks. I get compliments everywhere I go now!",
+        image: "https://images.unsplash.com/photo-1494790108755-2616b612b789?w=120&h=120&fit=crop&crop=face",
+        location: "Lagos, Nigeria",
+        verified: true,
+        beforeAfter: true,
+        productUsed: "Vitamin C Brightening Serum",
+        timeUsed: "3 weeks",
+        skinType: "Combination",
+        age: "28",
+        profession: "Marketing Executive",
+        likes: 147
+      },
+      {
+        id: 2,
+        name: "Kemi Adebayo",
+        rating: 5,
+        text: "I've tried countless products, but Eimaan's night cream is pure magic. My wrinkles are visibly reduced and my skin feels like silk every morning!",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop&crop=face",
+        location: "Abuja, Nigeria",
+        verified: true,
+        beforeAfter: false,
+        productUsed: "Anti-Aging Night Cream",
+        timeUsed: "2 months",
+        skinType: "Dry",
+        age: "35",
+        profession: "Business Owner",
+        likes: 203
+      },
+      {
+        id: 3,
+        name: "Fatima Mohammed",
+        rating: 5,
+        text: "The customer service is amazing and the products actually work. My friends keep asking what I'm using - my skin is glowing like never before!",
+        image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=120&h=120&fit=crop&crop=face",
+        location: "Kano, Nigeria",
+        verified: true,
+        beforeAfter: true,
+        productUsed: "Complete Skincare Set",
+        timeUsed: "6 weeks",
+        skinType: "Oily",
+        age: "24",
+        profession: "Software Developer",
+        likes: 189
+      },
+      {
+        id: 4,
+        name: "Chioma Ikenna",
+        rating: 5,
+        text: "As someone with sensitive skin, finding the right products was challenging. Eimaan's gentle cleanser changed everything - no more irritation, just healthy, clean skin!",
+        image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=120&h=120&fit=crop&crop=face",
+        location: "Port Harcourt, Nigeria",
+        verified: true,
+        beforeAfter: false,
+        productUsed: "Hydrating Facial Cleanser",
+        timeUsed: "1 month",
+        skinType: "Sensitive",
+        age: "31",
+        profession: "Doctor",
+        likes: 156
+      }
+    ];

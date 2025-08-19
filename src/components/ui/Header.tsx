@@ -2,7 +2,6 @@ import { ChevronDown, ArrowRight, Sparkles } from "lucide-react";
 import shopping from "../../assets/shopping.png";
 import logo from "../../assets/logo.png";
 
-
 export default function Header() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -16,7 +15,7 @@ export default function Header() {
 
       <div className="relative z-20 text-center text-white px-6 max-w-4xl">
         <div className="flex flex-col mb-8 justify-center items-center">
-          <img src={logo} className="w-32 h-32"  />
+          <img src={logo} className="w-32 h-32" />
           <div className="text-2xl md:text-3xl font-light text-pink-200 mb-4 tracking-wider">
             EIMAAN INNOVATIVE SKIN CARE
           </div>
@@ -42,7 +41,7 @@ export default function Header() {
             onClick={() =>
               document
                 .getElementById("products")
-                .scrollIntoView({ behavior: "smooth" })
+                ?.scrollIntoView({ behavior: "smooth" })
             }
             className="px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-xl"
           >
@@ -53,7 +52,7 @@ export default function Header() {
             onClick={() =>
               document
                 .getElementById("about")
-                .scrollIntoView({ behavior: "smooth" })
+                ?.scrollIntoView({ behavior: "smooth" })
             }
             className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-pink-600 font-semibold rounded-full transition-all duration-300"
           >
