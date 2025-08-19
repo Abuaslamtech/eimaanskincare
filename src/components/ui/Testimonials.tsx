@@ -5,7 +5,7 @@ import { testimonials } from "../../constants/testimonials";
 export default function Testimonials() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [ setHoveredCard] = useState(null);
+  const [hoveredCard, setHoveredCard] = useState(null);
 
   
   // Enhanced testimonials data

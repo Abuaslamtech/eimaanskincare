@@ -1,18 +1,22 @@
-import  { useState } from "react";
-import { Star, MessageCircle, ArrowRight, Sparkles, Heart, ShoppingBag } from "lucide-react";
+import { useState } from "react";
+import {
+  Star,
+  MessageCircle,
+  ArrowRight,
+  Sparkles,
+  Heart,
+  ShoppingBag,
+} from "lucide-react";
 import { products } from "../../constants/products";
 import { generateWhatsAppLink } from "../../utils/whatsapp";
 
 export default function Products() {
-  const [ setHoveredProduct] = useState<number | null>(null);
+  const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
   const [likedProducts, setLikedProducts] = useState(new Set());
-  
 
-
-
-  const toggleLike = (productId: number, e: React.MouseEvent<HTMLDivElement>)  => {
+  const toggleLike = (productId: number, e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    setLikedProducts(prev => {
+    setLikedProducts((prev) => {
       const newSet = new Set(prev);
       if (newSet.has(productId)) {
         newSet.delete(productId);
@@ -36,7 +40,9 @@ export default function Products() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg mb-8 border border-pink-100">
             <ShoppingBag className="text-pink-500" size={20} />
-            <span className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Premium Collection</span>
+            <span className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+              Premium Collection
+            </span>
           </div>
 
           <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
@@ -54,7 +60,8 @@ export default function Products() {
           </div>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover our curated collection of premium skincare products, each formulated with the finest ingredients for visible results.
+            Discover our curated collection of premium skincare products, each
+            formulated with the finest ingredients for visible results.
           </p>
         </div>
 
@@ -69,7 +76,6 @@ export default function Products() {
             >
               {/* Product Card */}
               <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 overflow-hidden border border-white/50 relative">
-                
                 {/* Badges */}
                 <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
                   {product.bestseller && (
@@ -92,7 +98,9 @@ export default function Products() {
                   <Heart
                     size={18}
                     className={`transition-colors duration-300 ${
-                      likedProducts.has(product.id) ? 'text-red-500 fill-red-500' : 'text-gray-400 hover:text-red-400'
+                      likedProducts.has(product.id)
+                        ? "text-red-500 fill-red-500"
+                        : "text-gray-400 hover:text-red-400"
                     }`}
                   />
                 </button>
@@ -104,7 +112,7 @@ export default function Products() {
                     alt={product.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  
+
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                 </div>
@@ -123,7 +131,9 @@ export default function Products() {
                             key={i}
                             size={14}
                             className={`${
-                              i < Math.floor(product.rating) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'
+                              i < Math.floor(product.rating)
+                                ? "text-yellow-400 fill-yellow-400"
+                                : "text-gray-300"
                             }`}
                           />
                         ))}
@@ -164,7 +174,18 @@ export default function Products() {
                       )}
                     </div>
                     <div className="text-sm text-green-600 font-semibold">
-                      Save {Math.round(((parseInt(product.originalPrice?.replace(/[₦,]/g, '') || '0') - parseInt(product.price.replace(/[₦,]/g, ''))) / parseInt(product.originalPrice?.replace(/[₦,]/g, '') || '1')) * 100)}%
+                      Save{" "}
+                      {Math.round(
+                        ((parseInt(
+                          product.originalPrice?.replace(/[₦,]/g, "") || "0"
+                        ) -
+                          parseInt(product.price.replace(/[₦,]/g, ""))) /
+                          parseInt(
+                            product.originalPrice?.replace(/[₦,]/g, "") || "1"
+                          )) *
+                          100
+                      )}
+                      %
                     </div>
                   </div>
 
@@ -177,7 +198,10 @@ export default function Products() {
                   >
                     <MessageCircle size={20} className="mr-3" />
                     <span>Order on WhatsApp</span>
-                    <ArrowRight size={18} className="ml-3 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight
+                      size={18}
+                      className="ml-3 group-hover/btn:translate-x-1 transition-transform duration-300"
+                    />
                   </a>
                 </div>
               </div>
@@ -196,10 +220,13 @@ export default function Products() {
               Can't Decide? Get a Personalized Recommendation!
             </h3>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Our skincare experts are ready to help you find the perfect products for your unique skin type and concerns.
+              Our skincare experts are ready to help you find the perfect
+              products for your unique skin type and concerns.
             </p>
             <a
-              href={`https://wa.me/+2348064474739?text=${encodeURIComponent("Hi! I'd like to get personalized skincare recommendations based on my skin type and concerns. Can you help me?")}`}
+              href={`https://wa.me/+2348064474739?text=${encodeURIComponent(
+                "Hi! I'd like to get personalized skincare recommendations based on my skin type and concerns. Can you help me?"
+              )}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-white text-purple-600 font-bold py-4 px-8 rounded-2xl hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-xl"
