@@ -131,7 +131,7 @@ export default function Products() {
                             key={i}
                             size={14}
                             className={`${
-                              i < Math.floor(product.rating)
+                              i < Math.floor(Number(product.rating ?? 0))
                                 ? "text-yellow-400 fill-yellow-400"
                                 : "text-gray-300"
                             }`}

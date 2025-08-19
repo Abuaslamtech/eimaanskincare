@@ -1,19 +1,28 @@
 import { useEffect, useState } from "react";
-import { Star, Quote, Heart, Verified, ArrowLeft, ArrowRight, Camera, MapPin, Calendar, ThumbsUp } from "lucide-react";
+import {
+  Star,
+  Quote,
+  Heart,
+  Verified,
+  ArrowLeft,
+  ArrowRight,
+  Camera,
+  MapPin,
+  Calendar,
+  ThumbsUp,
+} from "lucide-react";
 import { testimonials } from "../../constants/testimonials";
 
 export default function Testimonials() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [hoveredCard, setHoveredCard] = useState(null);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
-  
   // Enhanced testimonials data
-
 
   useEffect(() => {
     if (!isAutoPlaying) return;
-    
+
     const timer = setInterval(() => {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 5000);
@@ -25,7 +34,9 @@ export default function Testimonials() {
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentTestimonial(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
   };
 
   const currentReview = testimonials[currentTestimonial];
@@ -44,7 +55,9 @@ export default function Testimonials() {
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg mb-8 border border-pink-100">
             <Heart className="text-pink-500" size={20} />
-            <span className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Customer Love</span>
+            <span className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+              Customer Love
+            </span>
           </div>
 
           <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
@@ -65,7 +78,8 @@ export default function Testimonials() {
           </div>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of satisfied customers who've discovered the transformative power of our skincare products
+            Join thousands of satisfied customers who've discovered the
+            transformative power of our skincare products
           </p>
         </div>
 
@@ -74,7 +88,7 @@ export default function Testimonials() {
           <div className="bg-white/90 backdrop-blur-sm rounded-[3rem] shadow-2xl overflow-hidden border border-white/50 relative">
             {/* Background Pattern */}
             <div className="absolute inset-0 bg-gradient-to-br from-pink-50/50 via-purple-50/50 to-blue-50/50"></div>
-            
+
             <div className="relative z-10 p-12 md:p-16">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Left Side - Customer Info */}
@@ -98,9 +112,11 @@ export default function Testimonials() {
                   <div className="space-y-3">
                     <h3 className="text-2xl font-bold text-gray-800 flex items-center justify-center md:justify-start gap-2">
                       {currentReview.name}
-                      {currentReview.verified && <Verified size={20} className="text-green-500" />}
+                      {currentReview.verified && (
+                        <Verified size={20} className="text-green-500" />
+                      )}
                     </h3>
-                    
+
                     <div className="space-y-2 text-sm text-gray-600">
                       <div className="flex items-center justify-center md:justify-start gap-2">
                         <MapPin size={14} />
@@ -139,13 +155,15 @@ export default function Testimonials() {
 
                   {/* Rating Stars */}
                   <div className="flex justify-center md:justify-start mb-6">
-                    {[...Array(currentReview.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        size={28}
-                        className="text-yellow-400 fill-yellow-400 mr-1"
-                      />
-                    ))}
+                    {Array.from({ length: currentReview.rating ?? 0 }).map(
+                      (_, i) => (
+                        <Star
+                          key={i}
+                          size={28}
+                          className="text-yellow-400 fill-yellow-400 mr-1"
+                        />
+                      )
+                    )}
                   </div>
 
                   {/* Review Text */}
@@ -158,7 +176,9 @@ export default function Testimonials() {
                     <div className="flex items-center justify-center md:justify-start gap-4 text-sm text-gray-600">
                       <div className="flex items-center gap-1">
                         <ThumbsUp size={16} className="text-green-500" />
-                        <span>{currentReview.likes} people found this helpful</span>
+                        <span>
+                          {currentReview.likes} people found this helpful
+                        </span>
                       </div>
                     </div>
 
@@ -183,7 +203,7 @@ export default function Testimonials() {
           >
             <ArrowLeft size={20} />
           </button>
-          
+
           <button
             onClick={nextTestimonial}
             onMouseEnter={() => setIsAutoPlaying(false)}
@@ -200,9 +220,9 @@ export default function Testimonials() {
             <div
               key={testimonial.id}
               className={`cursor-pointer transition-all duration-500 ${
-                index === currentTestimonial 
-                  ? 'scale-105 z-10' 
-                  : 'hover:scale-105 opacity-80 hover:opacity-100'
+                index === currentTestimonial
+                  ? "scale-105 z-10"
+                  : "hover:scale-105 opacity-80 hover:opacity-100"
               }`}
               onClick={() => {
                 setCurrentTestimonial(index);
@@ -215,7 +235,7 @@ export default function Testimonials() {
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50 relative overflow-hidden group">
                 {/* Hover Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-pink-400/10 to-purple-400/10 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                
+
                 <div className="relative z-10">
                   {/* Mini Profile */}
                   <div className="flex items-center gap-3 mb-4">
@@ -227,9 +247,13 @@ export default function Testimonials() {
                     <div>
                       <h4 className="font-semibold text-gray-800 text-sm flex items-center gap-1">
                         {testimonial.name}
-                        {testimonial.verified && <Verified size={14} className="text-green-500" />}
+                        {testimonial.verified && (
+                          <Verified size={14} className="text-green-500" />
+                        )}
                       </h4>
-                      <p className="text-xs text-gray-600">{testimonial.location}</p>
+                      <p className="text-xs text-gray-600">
+                        {testimonial.location}
+                      </p>
                     </div>
                   </div>
 
@@ -271,8 +295,8 @@ export default function Testimonials() {
               }}
               className={`transition-all duration-300 ${
                 index === currentTestimonial
-                  ? 'w-8 h-3 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full'
-                  : 'w-3 h-3 bg-pink-200 hover:bg-pink-400 rounded-full hover:scale-125'
+                  ? "w-8 h-3 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full"
+                  : "w-3 h-3 bg-pink-200 hover:bg-pink-400 rounded-full hover:scale-125"
               }`}
             />
           ))}
